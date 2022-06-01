@@ -1,5 +1,5 @@
 body {
-  margin: 0;
+  margin: 10px;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
@@ -21,4 +21,34 @@ code {
 }
 .profile-pic:hover {
   transform: scale(1.1);
+}
+
+.movie-Photo {
+  height: 750px;
+  width: 360px;
+  object-fit: cover;
+}
+.movieList {
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  /* grid-template-columns: repeat(auto-fit, minmax(340px px, 1fr)); */
+  justify-items: center;
+}
+.MovieCard {
+}
+
+.movie-specs {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.summary {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  text-align: left;
 }
