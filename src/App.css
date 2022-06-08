@@ -1,3 +1,7 @@
+body {
+  background-color: #272727;
+  columns: white;
+}
 .App {
   text-align: center;
 }
@@ -23,7 +27,6 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
-
 .App-link {
   color: #61dafb;
 }
@@ -35,4 +38,124 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.add-movie-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 10px;
+}
+
+.not-found {
+  width: 100%;
+  max-width: 70%;
+}
+
+.MovieCard {
+  background-color: #1e1e1e;
+  color: white;
+  width: 340px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: space-evenly;
+  align-content: flex-start;
+  border-radius: 10px;
+}
+
+.movie-specs {
+  padding: 10px;
+  flex-grow: 0;
+}
+
+.movie-name {
+  text-align: left;
+}
+
+.summary {
+  padding: 10px;
+}
+
+.base-Icons {
+  margin-top: auto !important;
+  display: flex;
+  justify-content: space-between;
+  flex-grow: 2;
+  /* margin-top: auto; */
+  /* align-self: flex-end !important; */
+  align-items: flex-end;
+  flex-direction: row;
+  align-content: space-between;
+}
+
+body {
+  margin: 10px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.profile-pic {
+  height: 250px;
+  width: 250px;
+  object-fit: cover;
+  border-radius: 50%;
+  transition: 0.5s;
+}
+.profile-pic:hover {
+  transform: scale(1.1);
+}
+
+section div {
+  display: block;
+}
+
+.movie-Photo {
+  height: 750px;
+  width: 340px;
+  object-fit: cover;
+}
+.movieList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: space-evenly;
+  padding: 24px;
+}
+
+.movie-specs {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.summary {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  text-align: left;
+  flex-grow: 2;
+}
+
+.MovieDetails {
+  color: white;
+}
+
+input {
+  color: white !important;
+}
+
+label {
+  color: #1976d2;
 }

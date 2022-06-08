@@ -23,17 +23,21 @@ code {
   transform: scale(1.1);
 }
 
+section {
+  display: block;
+}
+
 .movie-Photo {
   height: 750px;
-  width: 360px;
+  width: 340px;
   object-fit: cover;
 }
 .movieList {
-  display: grid;
-  grid-gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-  /* grid-template-columns: repeat(auto-fit, minmax(340px px, 1fr)); */
-  justify-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: space-evenly;
+  padding: 24px;
 }
 .MovieCard {
 }
