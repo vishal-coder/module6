@@ -1,20 +1,19 @@
 import logo from "./logo.svg";
 import "./App.css";
-import {
-  Routes,
-  Route,
-  Link,
-  Navigate,
-  useParams,
-  useNavigate,
-} from "react-router-dom";
+import { Routes, Route, Link, Navigate, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { navigate } from "react-router-dom";
 import { AddColor } from "./AddColor";
 import { MovieCard } from "./MovieCard";
 
-import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
+import AppBar from "@mui/material/AppBar";
+import Toolbar from "@mui/material/Toolbar";
+import Typography from "@mui/material/Typography";
+import Button from "@mui/material/Button";
+import IconButton from "@mui/material/IconButton";
+import MenuIcon from "@mui/icons-material/Menu";
+import { MovieDetails } from "./MovieDetails";
 
 function App() {
   const name = "Guvi";
@@ -98,6 +97,8 @@ function App() {
     { name: "jack", imgSrc: "./2.jpg" },
     { name: "jack", imgSrc: "./3.jpg" },
   ];
+
+  const navigate = useNavigate();
   return (
     // <div className="App">
     //   {users.map((user) => (
@@ -106,22 +107,47 @@ function App() {
     // </div>
 
     <div className="App">
-      <nav>
+      <AppBar position="static">
+        <Toolbar>
+          <Button
+            color="inherit"
+            onClick={() => {
+              navigate("/");
+            }}
+          >
+            Home
+          </Button>
+          <Button
+            color="inherit"
+            onClick={() => {
+              navigate("/color-game");
+            }}
+          >
+            Color Game
+          </Button>
+          <Button
+            color="inherit"
+            onClick={() => {
+              navigate("/movie-List");
+            }}
+          >
+            Movie
+          </Button>
+        </Toolbar>
+      </AppBar>
+      {/* <nav>
         <ul>
           <li>
-            {/* <a href="/">home</a> */}
             <Link to="/">Home</Link>
           </li>
           <li>
             <Link to="/color-game">Color Game</Link>
-            {/* <a href="/color-game">color game</a> */}
           </li>
           <li>
             <Link to="/movie-List">Movie List</Link>
-            {/* <a href="/color-game">color game</a> */}
           </li>
         </ul>
-      </nav>
+      </nav> */}
 
       <Routes>
         <Route path="/" element={<Home />} />
@@ -150,54 +176,6 @@ function App() {
   );
 }
 
-function MovieDetails({ movieList }) {
-  const { id } = useParams();
-  const movie = movieList[id];
-  const styles = {
-    color: movie.rating > 8 ? "green" : "red",
-  };
-
-  const [show, setShow] = useState(true);
-
-  const paraStyles = {
-    display: show ? "block" : "none",
-  };
-
-  const navigate = useNavigate();
-  console.log(id);
-  return (
-    <div className="MovieDetails">
-      <iframe
-        width="1217"
-        height="560"
-        src={movie.trailer}
-        title="YouTube video player"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-      ></iframe>
-      <div>
-        <div className="movie-specs">
-          <h2>{movie.name}</h2>
-          <p style={styles}>⭐{movie.rating}</p>
-        </div>
-        <p style={paraStyles} className="summary">
-          {movie.summary}
-        </p>
-      </div>
-
-      <Button
-        onClick={() => {
-          navigate(-1);
-        }}
-        variant="contained"
-      >
-        Back
-      </Button>
-    </div>
-  );
-}
-
 function NotFound() {
   return (
     <div>
@@ -211,7 +189,7 @@ function NotFound() {
   );
 }
 function Home() {
-  return <h1>Welcome to the Movie APP</h1>;
+  return <h1>Welcome to Master Home Page</h1>;
 }
 
 function MovieList({ movieList, setMovieList }) {

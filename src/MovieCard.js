@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import Badge from "@mui/material/Badge";
 
 import InfoIcon from "@mui/icons-material/Info";
 //import IconButton from "@mui/icons-material/IconButton";
@@ -20,6 +21,8 @@ export function MovieCard({ movie, id }) {
   };
 
   const [show, setShow] = useState(true);
+  const [like, setLike] = useState(0);
+  const [unlike, setUnlike] = useState(0);
 
   const paraStyles = {
     display: show ? "block" : "none",
@@ -62,12 +65,26 @@ export function MovieCard({ movie, id }) {
       </p>
       <div class="base-Icons">
         <div>
-          <IconButton color="primary" size="large">
-            <ThumbUpIcon style={{ color: "#ffc400" }} />
-          </IconButton>
-          <IconButton color="primary" size="large">
-            <ThumbDownIcon style={{ color: "#ffc400" }} />
-          </IconButton>
+          <Badge badgeContent={like} color="primary">
+            <IconButton color="primary" size="large">
+              <ThumbUpIcon
+                style={{ color: "#ffc400" }}
+                onClick={() => {
+                  setLike(like + 1);
+                }}
+              />
+            </IconButton>
+          </Badge>
+          <Badge badgeContent={unlike} color="error">
+            <IconButton color="primary" size="large">
+              <ThumbDownIcon
+                style={{ color: "#ffc400" }}
+                onClick={() => {
+                  setUnlike(unlike + 1);
+                }}
+              />
+            </IconButton>
+          </Badge>
         </div>
 
         <div>
