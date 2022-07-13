@@ -153,9 +153,12 @@ section div {
 }
 
 input {
-  color: white !important;
+  /* color: white !important; */
 }
 
 label {
   color: #1976d2;
+}
+.FormValidationGroup {
+  color: yellow !important;
 }

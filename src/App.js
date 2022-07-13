@@ -14,6 +14,7 @@ import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import { MovieDetails } from "./MovieDetails";
+import { BasicForm } from "./BasicForm";
 
 function App() {
   const name = "Guvi";
@@ -133,6 +134,14 @@ function App() {
           >
             Movie
           </Button>
+          <Button
+            color="inherit"
+            onClick={() => {
+              navigate("/form");
+            }}
+          >
+            Form Validation
+          </Button>
         </Toolbar>
       </AppBar>
       {/* <nav>
@@ -166,6 +175,7 @@ function App() {
         <Route path="/films" element={<Navigate replace to="/movie-list" />} />
         <Route path="/404" element={<NotFound />} />
         <Route path="*" element={<Navigate replace to="/404" />} />
+        <Route path="/form" element={<BasicForm />} />
 
         {/* // Movie/addMovie */}
       </Routes>
